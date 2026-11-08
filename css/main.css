@@ -80,6 +80,7 @@ a:hover { text-decoration: underline; }
 .blog-filters button { padding: 8px 17px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: inherit; font-size: .86rem; cursor: pointer; }
 .blog-filters button:hover, .blog-filters button.active { border-color: var(--ink); }
 .blog-filters button.active { background: var(--ink); color: white; }
+html[data-theme="dark"] .blog-filters button.active { background: var(--accent); border-color: var(--accent); color: #111b24; }
 .post-list { max-width: 850px; margin-bottom: 80px; }
 .post-card { display: flex; align-items: center; gap: 22px; margin-bottom: 14px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
 .post-card:hover { color: var(--ink); transform: translateY(-3px); box-shadow: var(--shadow-hover); text-decoration: none; }
