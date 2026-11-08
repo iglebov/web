@@ -23,7 +23,7 @@ layout: default
     </div>
 
     <nav class="post-nav">
-        <a class="back-link" href="{{ '/blog/' | relative_url }}">
+        <a class="back-link" href="{% if page.lang == 'ru' %}{{ '/blog/index_ru.html' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">
                     {% if page.lang == 'ru' %}← Все стихи{% else %}← All poems{% endif %}
         </a>
     </nav>
