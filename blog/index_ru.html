@@ -23,7 +23,8 @@ permalink: /blog/index_ru.html
 </div>
 
 <div class="post-list">
-    {% for post in site.posts %}
+    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
         {% unless post.draft %}
         <a class="post-card" href="{{ post.url | relative_url }}" data-lang="{{ post.lang }}">
             {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">{% endif %}

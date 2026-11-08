@@ -23,7 +23,8 @@ description: Poems and thoughts by Ivan Glebov, in Russian and English.
 <p class="empty-state" hidden>No posts in this language yet.</p>
 
 <div class="post-list">
-    {% for post in site.posts %}
+    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
         {% unless post.draft %}
         <a class="post-card" href="{{ post.url | relative_url }}" data-lang="{{ post.lang }}">
             {% if post.image %}
