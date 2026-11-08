@@ -5,7 +5,6 @@ lang: en
 date: 2026-10-20
 image: /img/posts/photo_89_0.jpg
 image_alt: "Иллюстрация к стихотворению «Just feeling"
-excerpt: "Публикация из канала «Мятный латте»."
 ---
 
 <pre class="poem">Just feeling 🐧
