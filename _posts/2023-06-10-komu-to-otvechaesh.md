@@ -4,7 +4,7 @@ title: "Кому-то отвечаешь..."
 lang: ru
 date: 2023-06-10
 image: /img/yellow_sky.jpg
-image_alt: "Yellow sky"
+image_alt: "Жёлтое вечернее небо"
 excerpt: "Стихотворение о словах, чувствах и дружбе."
 draft: false
 ---

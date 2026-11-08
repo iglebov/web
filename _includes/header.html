@@ -1,23 +1,24 @@
 <header class="site-header">
     <div class="container site-header__inner">
+        <a class="skip-link" href="#main-content">{% if page.lang == 'ru' %}К содержанию{% else %}Skip to content{% endif %}</a>
         <a class="site-title" href="{{ '/' | relative_url }}">
             {% if page.lang == 'ru' %}Иван Глебов{% else %}Ivan Glebov{% endif %}
         </a>
-        <nav class="site-nav">
+        <nav class="site-nav" aria-label="{% if page.lang == 'ru' %}Основная навигация{% else %}Main navigation{% endif %}">
             {% if page.lang == 'ru' %}
-                <a href="{{ '/' | relative_url }}">Главная</a>
-                <a href="{{ '/localization/ru/study.html' | relative_url }}">Учёба</a>
-                <a href="{{ '/localization/ru/relax.html' | relative_url }}">Отдых</a>
-                <a href="{{ '/localization/ru/hobby.html' | relative_url }}">Хобби</a>
-                <a href="{{ '/blog/' | relative_url }}">Блог</a>
-                <a href="{{ '/localization/ru/contacts.html' | relative_url }}">Связь</a>
+                <a class="{% if page.section == 'home' %}is-current{% endif %}" href="{{ '/index_ru.html' | relative_url }}">Главная</a>
+                <a class="{% if page.url contains '/study' %}is-current{% endif %}" href="{{ '/localization/ru/study.html' | relative_url }}">Учёба</a>
+                <a class="{% if page.url contains '/relax' %}is-current{% endif %}" href="{{ '/localization/ru/relax.html' | relative_url }}">Отдых</a>
+                <a class="{% if page.url contains '/hobby' %}is-current{% endif %}" href="{{ '/localization/ru/hobby.html' | relative_url }}">Хобби</a>
+                <a class="{% if page.section == 'blog' or page.layout == 'post' %}is-current{% endif %}" href="{{ '/blog/index_ru.html' | relative_url }}">Блог</a>
+                <a class="{% if page.url contains '/contacts' %}is-current{% endif %}" href="{{ '/localization/ru/contacts.html' | relative_url }}">Связь</a>
             {% else %}
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/localization/eng/study.html' | relative_url }}">Study</a>
-                <a href="{{ '/localization/eng/relax.html' | relative_url }}">Relax</a>
-                <a href="{{ '/localization/eng/hobby.html' | relative_url }}">Hobby</a>
-                <a href="{{ '/blog/' | relative_url }}">Blog</a>
-                <a href="{{ '/localization/eng/contacts.html' | relative_url }}">Contacts</a>
+                <a class="{% if page.section == 'home' %}is-current{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+                <a class="{% if page.url contains '/study' %}is-current{% endif %}" href="{{ '/localization/eng/study.html' | relative_url }}">Study</a>
+                <a class="{% if page.url contains '/relax' %}is-current{% endif %}" href="{{ '/localization/eng/relax.html' | relative_url }}">Relax</a>
+                <a class="{% if page.url contains '/hobby' %}is-current{% endif %}" href="{{ '/localization/eng/hobby.html' | relative_url }}">Hobby</a>
+                <a class="{% if page.section == 'blog' or page.layout == 'post' %}is-current{% endif %}" href="{{ '/blog/' | relative_url }}">Blog</a>
+                <a class="{% if page.url contains '/contacts' %}is-current{% endif %}" href="{{ '/localization/eng/contacts.html' | relative_url }}">Contacts</a>
             {% endif %}
         </nav>
         <div class="lang-switch">
@@ -25,7 +26,7 @@
             {% if page.layout == 'post' %}{% assign post_alt = true %}{% endif %}
             {% if page.lang == 'en' %}
                 {% if post_alt %}
-                    <a href="{{ page.lang_alt | default: '/blog/' | relative_url }}" lang="ru">Русский</a>
+                    <a href="{{ page.lang_alt | default: '/blog/index_ru.html' | relative_url }}" lang="ru">Русский</a>
                 {% else %}
                     <a href="{{ page.lang_alt | default: '/index_ru.html' | relative_url }}" lang="ru">Русский</a>
                 {% endif %}

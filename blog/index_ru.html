@@ -1,0 +1,65 @@
+---
+layout: default
+section: blog
+lang: ru
+lang_alt: /blog/
+title: Блог — Иван Глебов
+description: Стихи и размышления Ивана Глебова на русском и английском языках.
+---
+<div class="page-heading-row">
+    <div>
+        <p class="eyebrow">Тексты</p>
+        <h1 class="page-heading">Блог</h1>
+    </div>
+    <span class="page-count">{{ site.posts | size }} публикаций</span>
+</div>
+<p class="page-intro">Стихи и размышления на русском и английском языках.</p>
+
+<div class="blog-filters" role="group" aria-label="Фильтр публикаций по языку">
+    <button type="button" class="active" data-filter="all" aria-pressed="true">Все</button>
+    <button type="button" data-filter="ru" aria-pressed="false">Русский</button>
+    <button type="button" data-filter="en" aria-pressed="false">English</button>
+</div>
+
+<div class="post-list">
+    {% for post in site.posts %}
+        {% unless post.draft %}
+        <a class="post-card" href="{{ post.url | relative_url }}" data-lang="{{ post.lang }}">
+            {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">{% endif %}
+            <div class="card-info">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+                <span class="post-language">{{ post.lang | upcase }}</span>
+                <h2>{{ post.title }}</h2>
+                {% if post.excerpt %}<p class="excerpt">{{ post.excerpt }}</p>{% endif %}
+            </div>
+        </a>
+        {% endunless %}
+    {% endfor %}
+</div>
+
+<p class="empty-state" hidden>Публикаций на этом языке пока нет.</p>
+
+<script>
+    (function () {
+        var buttons = document.querySelectorAll('.blog-filters button');
+        var cards = document.querySelectorAll('.post-card');
+        var empty = document.querySelector('.empty-state');
+        function apply(filter) {
+            var visible = 0;
+            cards.forEach(function (card) {
+                var show = filter === 'all' || card.getAttribute('data-lang') === filter;
+                card.style.display = show ? '' : 'none';
+                if (show) visible += 1;
+            });
+            empty.hidden = visible !== 0;
+            buttons.forEach(function (button) {
+                var active = button.getAttribute('data-filter') === filter;
+                button.classList.toggle('active', active);
+                button.setAttribute('aria-pressed', active);
+            });
+        }
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () { apply(button.getAttribute('data-filter')); });
+        });
+    })();
+</script>

@@ -9,11 +9,13 @@
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta name="theme-color" content="#182b3a">
     {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
 </head>
 <body>
     {% include header.html %}
-    <main class="container{% if page.section == 'home' %} page-home{% endif %}">
+    <main id="main-content" class="container{% if page.section == 'home' %} page-home{% endif %}">
         {{ content }}
     </main>
     {% include footer.html %}

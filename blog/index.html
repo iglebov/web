@@ -5,24 +5,33 @@ lang: en
 title: Blog — Ivan Glebov
 description: Poems and thoughts by Ivan Glebov, in Russian and English.
 ---
-<h1 class="page-heading">Blog</h1>
+<div class="page-heading-row">
+    <div>
+        <p class="eyebrow">Writing</p>
+        <h1 class="page-heading">Blog</h1>
+    </div>
+    <span class="page-count">{{ site.posts | size }} {% if site.posts.size == 1 %}post{% else %}posts{% endif %}</span>
+</div>
 <p class="page-intro">Poems and thoughts, in Russian and English.</p>
 
 <div class="blog-filters" role="group" aria-label="Filter posts by language">
-    <button type="button" class="active" data-filter="all">All</button>
-    <button type="button" data-filter="ru">Русский</button>
-    <button type="button" data-filter="en">English</button>
+    <button type="button" class="active" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="ru" aria-pressed="false">Русский</button>
+    <button type="button" data-filter="en" aria-pressed="false">English</button>
 </div>
+
+<p class="empty-state" hidden>No posts in this language yet.</p>
 
 <div class="post-list">
     {% for post in site.posts %}
         {% unless post.draft %}
         <a class="post-card" href="{{ post.url | relative_url }}" data-lang="{{ post.lang }}">
             {% if post.image %}
-                <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
             {% endif %}
             <div class="card-info">
                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+                <span class="post-language">{{ post.lang | upcase }}</span>
                 <h2>{{ post.title }}</h2>
                 {% if post.excerpt %}<p class="excerpt">{{ post.excerpt }}</p>{% endif %}
             </div>
@@ -41,8 +50,14 @@ description: Poems and thoughts by Ivan Glebov, in Russian and English.
                 var show = filter === 'all' || card.getAttribute('data-lang') === filter;
                 card.style.display = show ? '' : 'none';
             });
+            var visible = 0;
+            cards.forEach(function (card) {
+                if (card.style.display !== 'none') visible += 1;
+            });
+            document.querySelector('.empty-state').hidden = visible !== 0;
             buttons.forEach(function (button) {
                 button.classList.toggle('active', button.getAttribute('data-filter') === filter);
+                button.setAttribute('aria-pressed', button.getAttribute('data-filter') === filter);
             });
         }
 
