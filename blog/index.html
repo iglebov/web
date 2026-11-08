@@ -1,0 +1,55 @@
+---
+layout: default
+section: blog
+lang: en
+title: Blog — Ivan Glebov
+description: Poems and thoughts by Ivan Glebov, in Russian and English.
+---
+<h1 class="page-heading">Blog</h1>
+<p class="page-intro">Poems and thoughts, in Russian and English.</p>
+
+<div class="blog-filters" role="group" aria-label="Filter posts by language">
+    <button type="button" class="active" data-filter="all">All</button>
+    <button type="button" data-filter="ru">Русский</button>
+    <button type="button" data-filter="en">English</button>
+</div>
+
+<div class="post-list">
+    {% for post in site.posts %}
+        {% unless post.draft %}
+        <a class="post-card" href="{{ post.url | relative_url }}" data-lang="{{ post.lang }}">
+            {% if post.image %}
+                <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}">
+            {% endif %}
+            <div class="card-info">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+                <h2>{{ post.title }}</h2>
+                {% if post.excerpt %}<p class="excerpt">{{ post.excerpt }}</p>{% endif %}
+            </div>
+        </a>
+        {% endunless %}
+    {% endfor %}
+</div>
+
+<script>
+    (function () {
+        var buttons = document.querySelectorAll('.blog-filters button');
+        var cards = document.querySelectorAll('.post-card');
+
+        function apply(filter) {
+            cards.forEach(function (card) {
+                var show = filter === 'all' || card.getAttribute('data-lang') === filter;
+                card.style.display = show ? '' : 'none';
+            });
+            buttons.forEach(function (button) {
+                button.classList.toggle('active', button.getAttribute('data-filter') === filter);
+            });
+        }
+
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                apply(button.getAttribute('data-filter'));
+            });
+        });
+    })();
+</script>

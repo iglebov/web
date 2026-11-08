@@ -1,53 +1,29 @@
-<html>
-    <title>Ivan Glebov's hobby</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="../../css/hobby_style.css">
-    <head>
-    </head>
-    <body>
-        <a id="a_back" href="../../index.html">
-            <div id="back">
-                Back
-            </div>
-        </a>
-        <div id="poetry">
-            I write poetry
+---
+layout: default
+lang: en
+lang_alt: /localization/ru/hobby.html
+title: Hobby — Ivan Glebov
+description: Ivan Glebov's hobbies — writing poetry and coding.
+---
+<h1 class="page-heading">Hobby</h1>
+<p class="page-intro">
+    I write poetry — you can read my poems in the
+    <a href="{{ '/blog/' | relative_url }}">blog</a>.
+</p>
+
+<div class="grid">
+    <a class="card" href="{{ '/blog/' | relative_url }}">
+        <img src="{{ '/img/night_sky.jpg' | relative_url }}" alt="Poetry">
+        <div class="card-body">
+            <h2>Poetry</h2>
+            <p>Poems in Russian and English</p>
         </div>
-        <div id="dark_night">
-            <p>
-                Dark night.<br><br>
-                Dark night,<br>
-                Yeah, I guess I’m alright,<br>
-                Writing some notes,<br>
-                To get rid of my thoughts,<br>
-                The past and future all combined,<br>
-                Been heavy lately on my mind,<br>
-                I am sure it’s temporary,<br>
-                No need more worries,<br>
-                The good side actually,<br>
-                I will be able to tell more stories.<br>
-            </p>
-            <img id="img_for_poetry_1" src="../../img/night_sky.jpg">
+    </a>
+    <a class="card" href="{{ '/localization/eng/study.html' | relative_url }}">
+        <img src="{{ '/img/programming.png' | relative_url }}" alt="Code">
+        <div class="card-body">
+            <h2>Code</h2>
+            <p>Programming is both study and hobby</p>
         </div>
-        <div id="there">
-            <img id="img_for_poetry_2" src="../../img/yellow_sky.jpg">
-            <p>
-                Кому-то отвечаешь...<br><br>
-                Кому-то отвечаешь, и хочешь сказать пока,<br>
-                А кто-то заставляет поверить в себя,<br>
-                Вызывает чувства у тебя внутри,<br>
-                Которые кружатся по кругу,<br>
-                Пока не опишешь их словами.<br>
-                И не назовешь его другом.<br>
-            </p>
-        </div>
-        <div id="programming">
-            And code
-        </div>
-        <div id="programming_video">
-        </div>
-        <div id="dev_info">
-            Development: Ivan Glebov
-        </div>
-    </body>
-</html>
+    </a>
+</div>

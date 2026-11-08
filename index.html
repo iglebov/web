@@ -1,49 +1,51 @@
-<html>
-    <title>Ivan Glebov's website</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="css/index_style.css">
-    <head>
-    </head>
-    <body>
-        <div id="localization">
-            <a href="index_ru.html">
-                <img id="ru_flag" align="right" src="img/ru_flag.png">
-            </a>
-            <a href="index.html">
-                <img id="uk_flag" src="img/uk_flag.png">
-            </a>
+---
+layout: default
+section: home
+lang: en
+lang_alt: /index_ru.html
+title: Ivan Glebov — personal website
+description: Personal website of Ivan Glebov — studies, hobbies and poems.
+---
+<div class="hero">
+    <p class="eyebrow">Hello!</p>
+    <h1 class="hero-title">I am Ivan Glebov.</h1>
+    <p class="hero-sub">This website is about me — my studies, hobbies and poems.</p>
+</div>
+
+<div class="grid">
+    <a class="card" href="{{ '/localization/eng/study.html' | relative_url }}">
+        <img src="{{ '/img/study.jpg' | relative_url }}" alt="Study">
+        <div class="card-body">
+            <h2>Study</h2>
+            <p>BMSTU · Faculty of IBM · Innovatika</p>
         </div>
-        <div id="hi">
-            Hi!
+    </a>
+    <a class="card" href="{{ '/localization/eng/relax.html' | relative_url }}">
+        <img src="{{ '/img/relax.jpg' | relative_url }}" alt="Relax">
+        <div class="card-body">
+            <h2>Relax</h2>
+            <p>Videos and painting</p>
         </div>
-        <div id="name">
-            I am Ivan Glebov.
+    </a>
+    <a class="card" href="{{ '/localization/eng/hobby.html' | relative_url }}">
+        <img src="{{ '/img/hobby.jpg' | relative_url }}" alt="Hobby">
+        <div class="card-body">
+            <h2>Hobby</h2>
+            <p>Poetry and code</p>
         </div>
-        <div id="about">
-            This website is about me.
+    </a>
+    <a class="card" href="{{ '/blog/' | relative_url }}">
+        <img src="{{ '/img/book.jpg' | relative_url }}" alt="Blog">
+        <div class="card-body">
+            <h2>Blog</h2>
+            <p>Poems and thoughts</p>
         </div>
-        <a id="a_study" href="localization/eng/study.html">
-            <div id="study">
-                Study
-            </div>
-        </a>
-        <a id="a_relax" href="localization/eng/relax.html">
-            <div id="relax">
-                Relax
-            </div>
-        </a>
-        <a id="a_hobby" href="localization/eng/hobby.html">
-            <div id="hobby">
-                Hobby
-            </div>
-        </a>
-        <a id="a_contacts" href="localization/eng/contacts.html">
-            <div id="contacts">
-                Contacts
-            </div>
-        </a>
-        <div id="dev_info">
-            Development: Ivan Glebov
+    </a>
+    <a class="card" href="{{ '/localization/eng/contacts.html' | relative_url }}">
+        <img src="{{ '/img/contacts.jpg' | relative_url }}" alt="Contacts">
+        <div class="card-body">
+            <h2>Contacts</h2>
+            <p>GitHub, VK, email</p>
         </div>
-    </body>
-</html>
+    </a>
+</div>

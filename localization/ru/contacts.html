@@ -1,43 +1,33 @@
-<html>
-    <title>Контакты Ивана Глебова</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="../../css/contacts_style.css">
-    <head>
-    </head>
-    <body>
-        <a id="a_back" href="../../index_ru.html">
-            <div id="back">
-                Назад
-            </div>
-        </a>
-        <div id="about_contacts">
-            Вы можете найти мои контакты по ссылкам:
+---
+layout: default
+lang: ru
+lang_alt: /localization/eng/contacts.html
+title: Связь — Иван Глебов
+description: Как связаться с Иваном Глебовым — GitHub, VK и почта.
+---
+<h1 class="page-heading">Связь</h1>
+<p class="page-intro">Вы можете найти мои контакты по ссылкам:</p>
+
+<div class="grid">
+    <a class="card" href="https://github.com/iglebov">
+        <img src="{{ '/img/github_logo.png' | relative_url }}" alt="GitHub">
+        <div class="card-body">
+            <h2>GitHub</h2>
+            <p>github.com/iglebov</p>
         </div>
-        <div id="contacts_info">
-            <div id="github">
-            <a id="a_github" href="https://github.com/iglebov">
-                GitHub
-                <br>
-                <img src="../../img/github_logo.png">
-            </a>
-            </div>
-            <div id="vk">
-            <a id="a_vk" href="https://vk.com/iglebovvv">
-                VK
-                <br>
-                <img src="../../img/vk_logo.png">
-            </a>
-            </div>
-            <div id="email">
-            <a id="a_email" href="mailto:iglebov40@gmail.com">
-                Почта
-                <br>
-                <img src="../../img/email_logo.png">
-            </a>
-            </div>
+    </a>
+    <a class="card" href="https://vk.com/iglebovvv">
+        <img src="{{ '/img/vk_logo.png' | relative_url }}" alt="VK">
+        <div class="card-body">
+            <h2>VK</h2>
+            <p>vk.com/iglebovvv</p>
         </div>
-        <div id="dev_info">
-            Разработка: Иван Глебов
+    </a>
+    <a class="card" href="mailto:iglebov40@gmail.com">
+        <img src="{{ '/img/email_logo.png' | relative_url }}" alt="Почта">
+        <div class="card-body">
+            <h2>Почта</h2>
+            <p>iglebov40@gmail.com</p>
         </div>
-    </body>
-</html>
+    </a>
+</div>

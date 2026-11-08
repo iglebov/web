@@ -1,53 +1,29 @@
-<html>
-    <title>Хобби Ивана Глебова</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="../../css/hobby_style.css">
-    <head>
-    </head>
-    <body>
-        <a id="a_back" href="../../index_ru.html">
-            <div id="back">
-                Назад
-            </div>
-        </a>
-        <div id="poetry">
-            Я пишу стихотворения
+---
+layout: default
+lang: ru
+lang_alt: /localization/eng/hobby.html
+title: Хобби — Иван Глебов
+description: Увлечения Ивана Глебова — стихи и программирование.
+---
+<h1 class="page-heading">Хобби</h1>
+<p class="page-intro">
+    Я пишу стихотворения — их можно почитать в
+    <a href="{{ '/blog/' | relative_url }}">блоге</a>.
+</p>
+
+<div class="grid">
+    <a class="card" href="{{ '/blog/' | relative_url }}">
+        <img src="{{ '/img/night_sky.jpg' | relative_url }}" alt="Стихи">
+        <div class="card-body">
+            <h2>Стихи</h2>
+            <p>Стихотворения на русском и английском</p>
         </div>
-        <div id="dark_night">
-            <p>
-                Dark night.<br><br>
-                Dark night,<br>
-                Yeah, I guess I’m alright,<br>
-                Writing some notes,<br>
-                To get rid of my thoughts,<br>
-                The past and future all combined,<br>
-                Been heavy lately on my mind,<br>
-                I am sure it’s temporary,<br>
-                No need more worries,<br>
-                The good side actually,<br>
-                I will be able to tell more stories.<br>
-            </p>
-            <img id="img_for_poetry_1" src="../../img/night_sky.jpg">
+    </a>
+    <a class="card" href="{{ '/localization/ru/study.html' | relative_url }}">
+        <img src="{{ '/img/programming.png' | relative_url }}" alt="Код">
+        <div class="card-body">
+            <h2>Код</h2>
+            <p>Программирование — и учёба, и увлечение</p>
         </div>
-        <div id="there">
-            <img id="img_for_poetry_2" src="../../img/yellow_sky.jpg">
-            <p>
-                Кому-то отвечаешь...<br><br>
-                Кому-то отвечаешь, и хочешь сказать пока,<br>
-                А кто-то заставляет поверить в себя,<br>
-                Вызывает чувства у тебя внутри,<br>
-                Которые кружатся по кругу,<br>
-                Пока не опишешь их словами.<br>
-                И не назовешь его другом.<br>
-            </p>
-        </div>
-        <div id="programming">
-            И код
-        </div>
-        <div id="programming_video">
-        </div>
-        <div id="dev_info">
-            Разработка: Иван Глебов
-        </div>
-    </body>
-</html>
+    </a>
+</div>

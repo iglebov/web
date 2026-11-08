@@ -1,10 +1,17 @@
 # Web
-Website about me =)
 
-You can open it up by clicking here: [website](https://iglebov.github.io/web/)
-## Starting page
-<img width="1414" alt="starting page" src="https://github.com/iglebov/web/assets/41822761/adac09d3-964d-424d-b8cc-3079f95362c5">
+Личный сайт Ивана Глебова =)
 
-## TO DO
-1. ~~Localize (RUS/ENG)~~
-2. Add link to LinkedIn
+Открывается по ссылке: [website](https://iglebov.github.io/web/)
+
+Сайт построен на **Jekyll** и публикуется автоматически на **GitHub Pages** из ветки `master`.
+
+## Структура
+
+- `index.html`, `index_ru.html` — главная страница
+- `localization/eng/`, `localization/ru/` — разделы (EN/RU): Учёба, Отдых, Хобби, Связь
+- `blog/` — лента блога
+- `_posts/` — посты блога (стихотворения)
+- `img/` — картинки; для фото постов используйте `img/posts/`
+- `_layouts/`, `_includes/` — шаблоны Jekyll
+- `css/main.css` — все стили сайта

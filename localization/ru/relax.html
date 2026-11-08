@@ -1,26 +1,24 @@
-<html>
-    <title>Отдых Ивана Глебова</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="../../css/relax_style.css">
-    <head>
-    </head>
-    <body>
-        <a id="a_back" href="../../index_ru.html">
-            <div id="back">
-                Назад
-            </div>
-        </a>
-        <div id="free_time">
-            В свободное время я:
+---
+layout: default
+lang: ru
+lang_alt: /localization/eng/relax.html
+title: Отдых — Иван Глебов
+description: Как Иван Глебов проводит свободное время — записывает видео и рисует.
+---
+<h1 class="page-heading">Отдых</h1>
+<p class="page-intro">В свободное время я:</p>
+
+<div class="grid">
+    <a class="card" href="{{ '/localization/ru/hobby.html' | relative_url }}">
+        <img src="{{ '/img/making_videos.png' | relative_url }}" alt="Записываю видео">
+        <div class="card-body">
+            <h2>Записываю видео</h2>
         </div>
-        <div id="making_videos">
-            Записываю видео
+    </a>
+    <a class="card" href="{{ '/localization/ru/hobby.html' | relative_url }}">
+        <img src="{{ '/img/painting.png' | relative_url }}" alt="Рисую">
+        <div class="card-body">
+            <h2>Рисую</h2>
         </div>
-        <div id="painting">
-            Рисую
-        </div>
-        <div id="dev_info">
-            Разработка: Иван Глебов
-        </div>
-    </body>
-</html>
+    </a>
+</div>

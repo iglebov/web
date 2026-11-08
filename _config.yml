@@ -1,0 +1,15 @@
+title: Ivan Glebov
+description: Personal website of Ivan Glebov — studies, hobbies and poems.
+lang: en
+url: https://iglebov.github.io
+baseurl: /web
+
+markdown: kramdown
+
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore

@@ -1,44 +1,35 @@
-<html>
-    <title>Учёба Ивана Глебова</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="../../css/study_style.css">
-    <head>
-    </head>
-    <body>
-        <a id="a_back" href="../../index_ru.html">
-            <div id="back">
-                Назад
-            </div>
-        </a>
-        <div id="about_study">
-            В данный момент я учусь в МГТУ им. Н.Э.Баумана
-             на факультете ИБМ и кафедре Инноватика.
+---
+layout: default
+lang: ru
+lang_alt: /localization/eng/study.html
+title: Учёба — Иван Глебов
+description: Иван Глебов учится в МГТУ им. Н.Э. Баумана на факультете ИБМ и кафедре «Инноватика».
+---
+<h1 class="page-heading">Учёба</h1>
+<p class="page-intro">
+    В данный момент я учусь в МГТУ им. Н.Э. Баумана на факультете ИБМ и кафедре «Инноватика».
+</p>
+
+<div class="grid">
+    <a class="card" href="https://bmstu.ru/">
+        <img src="{{ '/img/bmstu_logo.png' | relative_url }}" alt="МГТУ им. Н.Э. Баумана">
+        <div class="card-body">
+            <h2>Университет</h2>
+            <p>bmstu.ru</p>
         </div>
-        <div id="study_info">
-            <div id="bauman">
-            <a id="a_university" href="https://bmstu.ru/">
-                Университет
-                <br>
-                <img src="../../img/bmstu_logo.png">
-            </a>
-            </div>
-            <div id="ebm">
-            <a id="a_faculty" href="http://ibm.bmstu.ru/">
-                Факультет
-                <br>
-                <img src="../../img/ebm_logo.png">
-            </a>
-            </div>
-            <div id="ebm6">
-            <a id="a_department" href="http://ibm6.bmstu.ru/">
-                Кафедра
-                <br>
-                <img src="../../img/ebm6_logo.png">
-            </a>
-            </div>
+    </a>
+    <a class="card" href="http://ibm.bmstu.ru/">
+        <img src="{{ '/img/ebm_logo.png' | relative_url }}" alt="Факультет ИБМ">
+        <div class="card-body">
+            <h2>Факультет</h2>
+            <p>ИБМ</p>
         </div>
-        <div id="dev_info">
-            Разработка: Иван Глебов
+    </a>
+    <a class="card" href="http://ibm6.bmstu.ru/">
+        <img src="{{ '/img/ebm6_logo.png' | relative_url }}" alt="Кафедра «Инноватика»">
+        <div class="card-body">
+            <h2>Кафедра</h2>
+            <p>Инноватика</p>
         </div>
-    </body>
-</html>
+    </a>
+</div>

@@ -1,0 +1,41 @@
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-title" href="{{ '/' | relative_url }}">
+            {% if page.lang == 'ru' %}Иван Глебов{% else %}Ivan Glebov{% endif %}
+        </a>
+        <nav class="site-nav">
+            {% if page.lang == 'ru' %}
+                <a href="{{ '/' | relative_url }}">Главная</a>
+                <a href="{{ '/localization/ru/study.html' | relative_url }}">Учёба</a>
+                <a href="{{ '/localization/ru/relax.html' | relative_url }}">Отдых</a>
+                <a href="{{ '/localization/ru/hobby.html' | relative_url }}">Хобби</a>
+                <a href="{{ '/blog/' | relative_url }}">Блог</a>
+                <a href="{{ '/localization/ru/contacts.html' | relative_url }}">Связь</a>
+            {% else %}
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/localization/eng/study.html' | relative_url }}">Study</a>
+                <a href="{{ '/localization/eng/relax.html' | relative_url }}">Relax</a>
+                <a href="{{ '/localization/eng/hobby.html' | relative_url }}">Hobby</a>
+                <a href="{{ '/blog/' | relative_url }}">Blog</a>
+                <a href="{{ '/localization/eng/contacts.html' | relative_url }}">Contacts</a>
+            {% endif %}
+        </nav>
+        <div class="lang-switch">
+            {% assign post_alt = false %}
+            {% if page.layout == 'post' %}{% assign post_alt = true %}{% endif %}
+            {% if page.lang == 'en' %}
+                {% if post_alt %}
+                    <a href="{{ page.lang_alt | default: '/blog/' | relative_url }}" lang="ru">Русский</a>
+                {% else %}
+                    <a href="{{ page.lang_alt | default: '/index_ru.html' | relative_url }}" lang="ru">Русский</a>
+                {% endif %}
+            {% elsif page.lang == 'ru' %}
+                {% if post_alt %}
+                    <a href="{{ page.lang_alt | default: '/blog/' | relative_url }}" lang="en">English</a>
+                {% else %}
+                    <a href="{{ page.lang_alt | default: '/index.html' | relative_url }}" lang="en">English</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</header>

@@ -1,44 +1,35 @@
-<html>
-    <title>Ivan Glebov's study</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="../../css/study_style.css">
-    <head>
-    </head>
-    <body>
-        <a id="a_back" href="../../index.html">
-            <div id="back">
-                Back
-            </div>
-        </a>
-        <div id="about_study">
-            At the moment I am studying at BMSTU
-             at the Faculty of IBM and the Department of Innovatika.
+---
+layout: default
+lang: en
+lang_alt: /localization/ru/study.html
+title: Study — Ivan Glebov
+description: Ivan Glebov is studying at BMSTU at the Faculty of IBM and the Department of Innovatika.
+---
+<h1 class="page-heading">Study</h1>
+<p class="page-intro">
+    At the moment I am studying at BMSTU at the Faculty of IBM and the Department of Innovatika.
+</p>
+
+<div class="grid">
+    <a class="card" href="https://bmstu.ru/">
+        <img src="{{ '/img/bmstu_logo.png' | relative_url }}" alt="BMSTU">
+        <div class="card-body">
+            <h2>University</h2>
+            <p>bmstu.ru</p>
         </div>
-        <div id="study_info">
-            <div id="bauman">
-            <a id="a_university" href="https://bmstu.ru/">
-                University
-                <br>
-                <img src="../../img/bmstu_logo.png">
-            </a>
-            </div>
-            <div id="ebm">
-            <a id="a_faculty" href="http://ibm.bmstu.ru/">
-                Faculty
-                <br>
-                <img src="../../img/ebm_logo.png">
-            </a>
-            </div>
-            <div id="ebm6">
-            <a id="a_department" href="http://ibm6.bmstu.ru/">
-                Department
-                <br>
-                <img src="../../img/ebm6_logo.png">
-            </a>
-            </div>
+    </a>
+    <a class="card" href="http://ibm.bmstu.ru/">
+        <img src="{{ '/img/ebm_logo.png' | relative_url }}" alt="Faculty of IBM">
+        <div class="card-body">
+            <h2>Faculty</h2>
+            <p>IBM</p>
         </div>
-        <div id="dev_info">
-            Development: Ivan Glebov
+    </a>
+    <a class="card" href="http://ibm6.bmstu.ru/">
+        <img src="{{ '/img/ebm6_logo.png' | relative_url }}" alt="Department of Innovatika">
+        <div class="card-body">
+            <h2>Department</h2>
+            <p>Innovatika</p>
         </div>
-    </body>
-</html>
+    </a>
+</div>

@@ -1,49 +1,51 @@
-<html>
-    <title>Сайт Ивана Глебова</title>
-    <meta charset="utf8">
-    <link rel="stylesheet" href="css/index_style.css">
-    <head>
-    </head>
-    <body>
-        <div id="localization">
-            <a href="index_ru.html">
-                <img id="ru_flag" align="right" src="img/ru_flag.png">
-            </a>
-            <a href="index.html">
-                <img id="uk_flag" src="img/uk_flag.png">
-            </a>
+---
+layout: default
+section: home
+lang: ru
+lang_alt: /index.html
+title: Сайт Ивана Глебова
+description: Личный сайт Ивана Глебова — учёба, увлечения и стихи.
+---
+<div class="hero">
+    <p class="eyebrow">Привет!</p>
+    <h1 class="hero-title">Я Иван Глебов.</h1>
+    <p class="hero-sub">Это мой сайт — об учёбе, увлечениях и стихах.</p>
+</div>
+
+<div class="grid">
+    <a class="card" href="{{ '/localization/ru/study.html' | relative_url }}">
+        <img src="{{ '/img/study.jpg' | relative_url }}" alt="Учёба">
+        <div class="card-body">
+            <h2>Учёба</h2>
+            <p>МГТУ · ИБМ · Инноватика</p>
         </div>
-        <div id="hi">
-            Привет!
+    </a>
+    <a class="card" href="{{ '/localization/ru/relax.html' | relative_url }}">
+        <img src="{{ '/img/relax.jpg' | relative_url }}" alt="Отдых">
+        <div class="card-body">
+            <h2>Отдых</h2>
+            <p>Видео и рисование</p>
         </div>
-        <div id="name">
-            Я Иван Глебов.
+    </a>
+    <a class="card" href="{{ '/localization/ru/hobby.html' | relative_url }}">
+        <img src="{{ '/img/hobby.jpg' | relative_url }}" alt="Хобби">
+        <div class="card-body">
+            <h2>Хобби</h2>
+            <p>Стихи и код</p>
         </div>
-        <div id="about">
-            Этот сайт обо мне.
+    </a>
+    <a class="card" href="{{ '/blog/' | relative_url }}">
+        <img src="{{ '/img/book.jpg' | relative_url }}" alt="Блог">
+        <div class="card-body">
+            <h2>Блог</h2>
+            <p>Стихотворения и размышления</p>
         </div>
-        <a id="a_study" href="localization/ru/study.html">
-            <div id="study">
-                Учёба
-            </div>
-        </a>
-        <a id="a_relax" href="localization/ru/relax.html">
-            <div id="relax">
-                Отдых
-            </div>
-        </a>
-        <a id="a_hobby" href="localization/ru/hobby.html">
-            <div id="hobby">
-                Хобби
-            </div>
-        </a>
-        <a id="a_contacts" href="localization/ru/contacts.html">
-            <div id="contacts">
-                Связь
-            </div>
-        </a>
-        <div id="dev_info">
-            Разработка: Иван Глебов
+    </a>
+    <a class="card" href="{{ '/localization/ru/contacts.html' | relative_url }}">
+        <img src="{{ '/img/contacts.jpg' | relative_url }}" alt="Связь">
+        <div class="card-body">
+            <h2>Связь</h2>
+            <p>GitHub, VK, почта</p>
         </div>
-    </body>
-</html>
+    </a>
+</div>
