@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <meta name="theme-color" content="#182b3a">
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+            } catch (error) {}
+        })();
+    </script>
     {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
 </head>
 <body>
@@ -19,5 +26,28 @@
         {{ content }}
     </main>
     {% include footer.html %}
+    <script>
+        (function () {
+            var button = document.querySelector('.theme-toggle');
+            if (!button) return;
+            var icon = button.querySelector('.theme-toggle__icon');
+            var isRussian = document.documentElement.lang === 'ru';
+            function update(dark) {
+                button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+                button.setAttribute('aria-label', dark
+                    ? (isRussian ? 'Включить светлую тему' : 'Enable light theme')
+                    : (isRussian ? 'Включить тёмную тему' : 'Enable dark theme'));
+                icon.textContent = dark ? '☀' : '☾';
+            }
+            var dark = document.documentElement.dataset.theme === 'dark';
+            update(dark);
+            button.addEventListener('click', function () {
+                dark = !dark;
+                document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+                try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (error) {}
+                update(dark);
+            });
+        })();
+    </script>
 </body>
 </html>

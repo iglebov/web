@@ -21,22 +21,27 @@
                 <a class="{% if page.url contains '/contacts' %}is-current{% endif %}" href="{{ '/localization/eng/contacts.html' | relative_url }}">Contacts</a>
             {% endif %}
         </nav>
-        <div class="lang-switch">
-            {% assign post_alt = false %}
-            {% if page.layout == 'post' %}{% assign post_alt = true %}{% endif %}
-            {% if page.lang == 'en' %}
-                {% if post_alt %}
-                    <a href="{{ page.lang_alt | default: '/blog/index_ru.html' | relative_url }}" lang="ru">Русский</a>
-                {% else %}
-                    <a href="{{ page.lang_alt | default: '/index_ru.html' | relative_url }}" lang="ru">Русский</a>
+        <div class="header-tools">
+            <div class="lang-switch">
+                {% assign post_alt = false %}
+                {% if page.layout == 'post' %}{% assign post_alt = true %}{% endif %}
+                {% if page.lang == 'en' %}
+                    {% if post_alt %}
+                        <a href="{{ page.lang_alt | default: '/blog/index_ru.html' | relative_url }}" lang="ru">Русский</a>
+                    {% else %}
+                        <a href="{{ page.lang_alt | default: '/index_ru.html' | relative_url }}" lang="ru">Русский</a>
+                    {% endif %}
+                {% elsif page.lang == 'ru' %}
+                    {% if post_alt %}
+                        <a href="{{ page.lang_alt | default: '/blog/' | relative_url }}" lang="en">English</a>
+                    {% else %}
+                        <a href="{{ page.lang_alt | default: '/index.html' | relative_url }}" lang="en">English</a>
+                    {% endif %}
                 {% endif %}
-            {% elsif page.lang == 'ru' %}
-                {% if post_alt %}
-                    <a href="{{ page.lang_alt | default: '/blog/' | relative_url }}" lang="en">English</a>
-                {% else %}
-                    <a href="{{ page.lang_alt | default: '/index.html' | relative_url }}" lang="en">English</a>
-                {% endif %}
-            {% endif %}
+            </div>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="{% if page.lang == 'ru' %}Включить тёмную тему{% else %}Enable dark theme{% endif %}">
+                <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+            </button>
         </div>
     </div>
 </header>
