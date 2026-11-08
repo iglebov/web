@@ -104,8 +104,7 @@ html[data-theme="dark"] .blog-filters button.active { background: var(--accent);
 .post-content { font-size: 1.08rem; }
 .post-content p { margin: 0 0 1.25em; }
 pre.poem { overflow-x: auto; margin: 0; padding: 4px 0 4px 26px; border-left: 3px solid var(--accent-soft); background: transparent; color: var(--ink); font: 1.25rem/2 var(--serif); white-space: pre-line; }
-.stress { ruby-position: over; }
-.stress rt { color: currentColor; font: .58em/1 var(--serif); }
+.stress { text-decoration-line: overline; text-decoration-thickness: 1px; text-decoration-color: var(--accent); text-decoration-skip-ink: none; }
 .post-nav { margin-top: 58px; }
 .back-link { color: var(--muted); font-size: .9rem; }
 .back-link:hover { color: var(--accent-dark); text-decoration: none; }
